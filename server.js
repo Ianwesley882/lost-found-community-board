@@ -32,7 +32,7 @@ let items = [
     category: 'accessories',
     datePosted: new Date(Date.now() - 5*24*3600*1000).toISOString(),
     contactInfo: 'jane.smith@email.com',
-    imageUrl: 'https://images.unsplash.com/photo-1542362567-b07e54358753?w=400',
+    imageUrl: 'images/s-zoom.png',
     isClaimed: false
   }
 ];
