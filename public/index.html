@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Havens Reach — Lost & Found</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Havens Reach</h1>
+    <p class="tagline">Lost & Found Community</p>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <div class="tabs">
+        <button data-type="" class="tab active">All</button>
+        <button data-type="lost" class="tab">Lost</button>
+        <button data-type="found" class="tab">Found</button>
+      </div>
+      <input id="search" placeholder="Search title, description or location..." />
+      <select id="category">
+        <option value="">All categories</option>
+        <option value="electronics">Electronics</option>
+        <option value="accessories">Accessories</option>
+        <option value="clothing">Clothing</option>
+        <option value="bags">Bags</option>
+        <option value="keys">Keys</option>
+        <option value="documents">Documents</option>
+      </select>
+      <a href="#add" class="btn" id="addBtn">Add item</a>
+    </section>
+
+    <section id="list" class="item-list"></section>
+
+    <template id="cardTemplate">
+      <article class="card">
+        <img class="thumb" src="" alt="" />
+        <div class="card-body">
+          <h3 class="title"></h3>
+          <p class="meta"></p>
+          <p class="desc"></p>
+          <div class="card-actions">
+            <button class="view">View</button>
+            <button class="claim">Mark Claimed</button>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <section id="detail" class="modal hidden">
+      <div class="modal-content">
+        <button id="closeDetail" class="close">✕</button>
+        <img id="detailImg" src="" alt="" />
+        <h2 id="detailTitle"></h2>
+        <p id="detailMeta"></p>
+        <p id="detailDesc"></p>
+        <p><strong>Contact:</strong> <span id="detailContact"></span></p>
+        <button id="claimBtn" class="btn">Mark as Claimed</button>
+      </div>
+    </section>
+
+    <section id="add" class="add-form">
+      <h2>Add Item</h2>
+      <form id="addForm">
+        <label>Title<input name="title" required /></label>
+        <label>Description<textarea name="description"></textarea></label>
+        <label>Location<input name="location" /></label>
+        <label>Type
+          <select name="type">
+            <option value="lost">Lost</option>
+            <option value="found">Found</option>
+          </select>
+        </label>
+        <label>Category
+          <select name="category">
+            <option value="electronics">Electronics</option>
+            <option value="accessories">Accessories</option>
+            <option value="clothing">Clothing</option>
+            <option value="bags">Bags</option>
+            <option value="keys">Keys</option>
+            <option value="documents">Documents</option>
+          </select>
+        </label>
+        <label>Contact Info<input name="contactInfo" /></label>
+        <label>Image URL<input name="imageUrl" /></label>
+        <div class="form-actions">
+          <button type="submit" class="btn">Submit</button>
+          <a href="#" id="cancelAdd" class="btn secondary">Cancel</a>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="footer">Built with ♥ — Example app</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
